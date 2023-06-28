@@ -38,13 +38,13 @@
             this.teachersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.teachersTableAdapter = new dedenevskaya_schoolSystem.dedenevskaya_schoolDataSetTableAdapters.teachersTableAdapter();
             this.tableAdapterManager = new dedenevskaya_schoolSystem.dedenevskaya_schoolDataSetTableAdapters.TableAdapterManager();
+            this.diplom_qualificationsTableAdapter = new dedenevskaya_schoolSystem.dedenevskaya_schoolDataSetTableAdapters.diplom_qualificationsTableAdapter();
             this.teacher_nameTextBox = new System.Windows.Forms.TextBox();
             this.teacher_home_addressTextBox = new System.Windows.Forms.TextBox();
             this.teacher_phone_numberMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.teacher_birth_dateDateTimePicker = new System.Windows.Forms.MaskedTextBox();
             this.teacher_diplom_qualificationComboBox = new System.Windows.Forms.ComboBox();
             this.diplomqualificationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.diplom_qualificationsTableAdapter = new dedenevskaya_schoolSystem.dedenevskaya_schoolDataSetTableAdapters.diplom_qualificationsTableAdapter();
             this.btnExitToMainMenu = new System.Windows.Forms.Button();
             this.btnRegisterNewTeacher = new System.Windows.Forms.Button();
             teacher_nameLabel = new System.Windows.Forms.Label();
@@ -57,31 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.diplomqualificationsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dedenevskaya_schoolDataSet
-            // 
-            this.dedenevskaya_schoolDataSet.DataSetName = "dedenevskaya_schoolDataSet";
-            this.dedenevskaya_schoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // teachersBindingSource
-            // 
-            this.teachersBindingSource.DataMember = "teachers";
-            this.teachersBindingSource.DataSource = this.dedenevskaya_schoolDataSet;
-            // 
-            // teachersTableAdapter
-            // 
-            this.teachersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.diplom_qualificationsTableAdapter = this.diplom_qualificationsTableAdapter;
-            this.tableAdapterManager.gradesTableAdapter = null;
-            this.tableAdapterManager.performanceTableAdapter = null;
-            this.tableAdapterManager.school_subjectsTableAdapter = null;
-            this.tableAdapterManager.studentsTableAdapter = null;
-            this.tableAdapterManager.teachersTableAdapter = this.teachersTableAdapter;
-            this.tableAdapterManager.UpdateOrder = dedenevskaya_schoolSystem.dedenevskaya_schoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // teacher_nameLabel
             // 
             teacher_nameLabel.AutoSize = true;
@@ -92,15 +67,6 @@
             teacher_nameLabel.Size = new System.Drawing.Size(117, 29);
             teacher_nameLabel.TabIndex = 1;
             teacher_nameLabel.Text = "Введите ФИО";
-            // 
-            // teacher_nameTextBox
-            // 
-            this.teacher_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teachersBindingSource, "teacher_name", true));
-            this.teacher_nameTextBox.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.teacher_nameTextBox.Location = new System.Drawing.Point(126, 6);
-            this.teacher_nameTextBox.Name = "teacher_nameTextBox";
-            this.teacher_nameTextBox.Size = new System.Drawing.Size(490, 36);
-            this.teacher_nameTextBox.TabIndex = 2;
             // 
             // teacher_diplom_qualificationLabel
             // 
@@ -146,6 +112,44 @@
             teacher_home_addressLabel.TabIndex = 9;
             teacher_home_addressLabel.Text = "Введите домашний адрес";
             // 
+            // dedenevskaya_schoolDataSet
+            // 
+            this.dedenevskaya_schoolDataSet.DataSetName = "dedenevskaya_schoolDataSet";
+            this.dedenevskaya_schoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // teachersBindingSource
+            // 
+            this.teachersBindingSource.DataMember = "teachers";
+            this.teachersBindingSource.DataSource = this.dedenevskaya_schoolDataSet;
+            // 
+            // teachersTableAdapter
+            // 
+            this.teachersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.diplom_qualificationsTableAdapter = this.diplom_qualificationsTableAdapter;
+            this.tableAdapterManager.gradesTableAdapter = null;
+            this.tableAdapterManager.performanceTableAdapter = null;
+            this.tableAdapterManager.school_subjectsTableAdapter = null;
+            this.tableAdapterManager.studentsTableAdapter = null;
+            this.tableAdapterManager.teachersTableAdapter = this.teachersTableAdapter;
+            this.tableAdapterManager.UpdateOrder = dedenevskaya_schoolSystem.dedenevskaya_schoolDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // diplom_qualificationsTableAdapter
+            // 
+            this.diplom_qualificationsTableAdapter.ClearBeforeFill = true;
+            // 
+            // teacher_nameTextBox
+            // 
+            this.teacher_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teachersBindingSource, "teacher_name", true));
+            this.teacher_nameTextBox.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.teacher_nameTextBox.Location = new System.Drawing.Point(126, 6);
+            this.teacher_nameTextBox.Name = "teacher_nameTextBox";
+            this.teacher_nameTextBox.Size = new System.Drawing.Size(490, 36);
+            this.teacher_nameTextBox.TabIndex = 2;
+            // 
             // teacher_home_addressTextBox
             // 
             this.teacher_home_addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teachersBindingSource, "teacher_home_address", true));
@@ -181,8 +185,10 @@
             this.teacher_diplom_qualificationComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.teachersBindingSource, "teacher_diplom_qualification", true));
             this.teacher_diplom_qualificationComboBox.DataSource = this.diplomqualificationsBindingSource;
             this.teacher_diplom_qualificationComboBox.DisplayMember = "diplom_qualification_name";
+            this.teacher_diplom_qualificationComboBox.DropDownHeight = 150;
             this.teacher_diplom_qualificationComboBox.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.teacher_diplom_qualificationComboBox.FormattingEnabled = true;
+            this.teacher_diplom_qualificationComboBox.IntegralHeight = false;
             this.teacher_diplom_qualificationComboBox.Location = new System.Drawing.Point(321, 48);
             this.teacher_diplom_qualificationComboBox.Name = "teacher_diplom_qualificationComboBox";
             this.teacher_diplom_qualificationComboBox.Size = new System.Drawing.Size(295, 37);
@@ -193,10 +199,6 @@
             // 
             this.diplomqualificationsBindingSource.DataMember = "diplom_qualifications";
             this.diplomqualificationsBindingSource.DataSource = this.dedenevskaya_schoolDataSet;
-            // 
-            // diplom_qualificationsTableAdapter
-            // 
-            this.diplom_qualificationsTableAdapter.ClearBeforeFill = true;
             // 
             // btnExitToMainMenu
             // 
